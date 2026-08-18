@@ -1,0 +1,31 @@
+[
+  {
+    "title": "QA Conference",
+    "description": "Quarterly QA conference",
+    "category": "Workshop",
+    "city": "Bengaluru",
+    "venue": "Bengaluru Conference room",
+    "dateTime": "2027-08-29T10:00",
+    "price": "500",
+    "totalSeats": "100",
+    "fullName": "Unknow QA",
+    "email": "unknown1@gmail.com",
+    "password": "Unknown@1",
+    "phone": "9087654321"
+  },
+  {
+    "title": "QA Conference 2",
+    "description": "Quarterly QA conference",
+    "category": "Workshop",
+    "city": "Bengaluru",
+    "venue": "Bengaluru Conference room",
+    "dateTime": "2027-08-30T10:00",
+    "price": "1000",
+    "totalSeats": "200",
+    "fullName": "Unknow QA",
+    "email": "unknown1@gmail.com",
+    "password": "Unknown@1",
+    "phone": "9087654322"
+  }
+
+]

@@ -1,0 +1,25 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestSuite" verbose="1" parallel="classes" thread-count="3">
+    <test name="RegressionTests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="org.example.tests.CreateEventDataDrivenTest"/>
+            <class name="org.example.tests.ApiTest"/>
+            <class name="org.example.tests.MockWebTest"/>
+<!--            <class name="org.example.tests.UiValidationContinuedTest"/>-->
+        </classes>
+    </test>
+
+<!--    <test name="RegressionTests">-->
+<!--        <classes>-->
+<!--            <class name="org.example.tests.CreateEventDataDrivenTest"/>-->
+<!--            <class name="org.example.tests.ApiTest"/>-->
+<!--            <class name="org.example.tests.MockWebTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
