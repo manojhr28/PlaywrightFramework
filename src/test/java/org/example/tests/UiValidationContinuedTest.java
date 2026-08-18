@@ -24,7 +24,7 @@ public class UiValidationContinuedTest {
 
     }
 
-    @Test(groups={"smoke"})
+    @Test
     public void uiValidationContinued(){
         //Validate hidden field
         assertThat(page.getByPlaceholder("Hide/Show Example")).isVisible();

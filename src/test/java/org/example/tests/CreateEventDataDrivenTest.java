@@ -18,7 +18,7 @@ public class CreateEventDataDrivenTest extends BaseTest{
         return DataProviderUtil.getJsonDataToMap("/src/test/resources/eventBookingData.json");
     }
 
-    @Test(dataProvider = "eventBookingData", description = "Login to the website, create event and book the event")
+    @Test(dataProvider = "eventBookingData", groups={"smoke"}, description = "Login to the website, create event and book the event")
     public void createEvent(HashMap<String,String> data) throws InterruptedException {
 
         //Login
