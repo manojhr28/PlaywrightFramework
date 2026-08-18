@@ -4,6 +4,27 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Browser to run tests on'
+        required: true
+        default: 'chromium'
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - webkit
+#      environment:
+#        description: 'Environment to run tests against'
+#        required: true
+#        default: 'local'
+#        type: choice
+#        options:
+#          - dev
+#          - test
+#          - production
 jobs:
   test:
     timeout-minutes: 60
@@ -19,4 +40,4 @@ jobs:
       - name: Ensure browsers are installed
         run: mvn exec:java -e -Dexec.mainClass=com.microsoft.playwright.CLI -Dexec.args="install --with-deps" -Dexec.classpathScope=test
       - name: Run tests
-        run: mvn test
+        run: mvn test -Dbrowser=${{github.event.inputs.browser}}
