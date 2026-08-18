@@ -39,7 +39,8 @@ public class BaseTest {
             browser=playwright.webkit().launch(new BrowserType.LaunchOptions().setHeadless(false)); // to run test on webkit (Safari) engine
         }
         else{
-            browser=playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)); //to run test on chrome engine
+//            browser=playwright.chromium().launch(new BrowserType.LaunchOptions().setHeadless(false));
+            browser=playwright.chromium().launch();//to run test on chrome engine
         }
 
         page= browser.newPage();
