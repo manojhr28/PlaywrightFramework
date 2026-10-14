@@ -11,6 +11,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
 public class SampleTest {
@@ -48,7 +52,10 @@ public class SampleTest {
         page.getByLabel("Category").selectOption("Workshop");
         page.locator("#city").fill("Bengaluru");
         page.getByLabel("Venue").fill("Bengaluru Conference room");
-        page.getByLabel("Event Date & Time").fill("2026-08-29T10:00");
+        LocalDateTime futureDate = LocalDateTime.now().plusDays(10).withHour(10).withMinute(0);
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm");
+        String isoDateTimeString = futureDate.format(formatter);
+        page.getByLabel("Event Date & Time").fill(isoDateTimeString);
         page.getByLabel("Price ($)").fill("100");
         page.getByLabel("Total Seats").fill("100");
         Thread.sleep(3000);
